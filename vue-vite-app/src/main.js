@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
+import './jsex'
+import './css'
 import App from './App'
+
 createApp App
   .mount '#app'
 

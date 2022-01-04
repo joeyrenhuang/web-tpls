@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import './index.stylus'
+import './jsex'
+import './css'
 import App from './App'
-import './test'
 { StrictMode } = React
 ReactDOM.render pug`
     StrictMode

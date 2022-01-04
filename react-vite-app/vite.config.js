@@ -13,7 +13,7 @@ export default defineConfig({
     tool: path.resolve('src/tool'),
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.coffee']
+    extensions: ['.jsx', '.js', '.coffee', '.styl']
   },
   plugins: [
     load(),

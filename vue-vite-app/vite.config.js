@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import fs from 'fs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
     tool: path.resolve('src/tool'),
   },
   resolve: {
-    extensions: ['.vue', '.js', '.coffee']
+    extensions: ['.vue', '.js', '.coffee', '.styl']
   },
   plugins: [
     coffee(),
