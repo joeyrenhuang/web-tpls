@@ -1,19 +1,18 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import fs from 'fs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  alias: {
-    '@': path.resolve('src/component'),
-    src: path.resolve('src'),
-    asset: path.resolve('src/asset'),
-    view: path.resolve('src/view'),
-    store: path.resolve('src/store'),
-    tool: path.resolve('src/tool'),
-  },
   resolve: {
+    alias: {
+      '@': path.resolve('src/component'),
+      src: path.resolve('src'),
+      asset: path.resolve('src/asset'),
+      view: path.resolve('src/view'),
+      store: path.resolve('src/store'),
+      tool: path.resolve('src/tool'),
+    },
     extensions: ['.vue', '.js', '.coffee', '.styl']
   },
   plugins: [
