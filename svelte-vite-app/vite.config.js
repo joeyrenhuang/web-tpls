@@ -33,7 +33,6 @@ function load() {
   return {
     name: 'load',
     load: function(id) {
-      console.log(`loading ${id}`)
       if (/(coffee|svelte)$/.test(id)) {
         return require('fs').readFileSync(id.split('?')[0]).toString().coffee(id)
       }
