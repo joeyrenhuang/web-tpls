@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import sveltePreprocess from 'svelte-preprocess'
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -17,7 +18,13 @@ export default defineConfig({
   },
   plugins: [
     load(),
-    svelte(),
+    svelte({
+      preprocess: sveltePreprocess({
+        coffeescript: true,
+        stylus: true,
+        pug: true,
+      })
+    }),
   ]
 })
 
@@ -26,8 +33,9 @@ function load() {
   return {
     name: 'load',
     load: function(id) {
+      console.log(`loading ${id}`)
       if (/(coffee|svelte)$/.test(id)) {
-        return require('fs').readFileSync(id.split('?')[0]).toString().pug().coffee(id)
+        return require('fs').readFileSync(id.split('?')[0]).toString().coffee(id)
       }
     }
   }
@@ -51,13 +59,3 @@ String.prototype.coffee = function coffee(id) {
   }
 };
 
-String.prototype.pug = function pug() {
-  return this.replace(/<pug>([^]*?)<\/pug>/g, function(a, $1) {
-    var str = $1.replace(/^[\n\r]*|[\s\n\r]*$/g, '')
-    // resolve indent error for pug
-    // remove empty space for each line, the spaces count is first line.
-    var n = str.match(/^(\s*)/)[1].length
-    str = str.replace(new RegExp(`^[\\s]{${n}}`, 'gm'), '')
-    return require('pug').compile(str)()
-  })
-}

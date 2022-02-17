@@ -11,6 +11,7 @@
     "coffeescript": "^2.6.1",
     "pug": "^3.0.2",
     "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.3",
     "vite": "^2.7.2"
   }
 }

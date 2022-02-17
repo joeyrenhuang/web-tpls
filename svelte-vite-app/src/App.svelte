@@ -2,10 +2,10 @@
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
   # coffee comment
-  console.log 'using coffee in svelte'
+  console.log '1using coffee in svelte'
 </script>
 
-<pug>
+<template lang="pug">
 
   main
     img(src="{logo}" alt="Svelte Logo")  
@@ -18,50 +18,50 @@
       a(href="https://github.com/sveltejs/kit#readme") SvelteKit
       | for the officially supported framework, also powered by Vite!
 
-</pug>
+</template>
 
 
 
-<style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+<style lang="stylus">
+  :root 
+    font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  
 
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
+  main 
+    font-size 16px
+    text-align center
+    padding 1em
+    margin 0 auto 
+  
 
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
+  img
+    height 16em
+    width 16em
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
+  h1 
+    color #ff3e00 
+    text-transform uppercase
+    font-size 4em
+    font-weight 100
+    line-height 1.1
+    margin 2em auto
+    max-width 14em
+  
 
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
+  p 
+    max-width 14em
+    margin 1em auto
+    line-height 1.35
+  
 
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
+  @media (min-width 480px) 
+    h1 
+      max-width none
+    
 
-    p {
-      max-width: none;
-    }
-  }
+    p 
+      max-width none
+    
+  
 </style>
