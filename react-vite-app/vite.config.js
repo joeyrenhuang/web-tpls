@@ -46,9 +46,6 @@ String.prototype.coffee = function coffee(id) {
       map: sourceMap
     };
   }
-  return {
-    code: this
-  }
 };
 
 String.prototype.pug = function pug() {
